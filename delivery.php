@@ -1306,7 +1306,6 @@ Overall Stats:
                                             if (instructionsJson) {
                                                 try {
                                                     const segments = JSON.parse(instructionsJson);
-                                                    console.log(segments)
                                                     displayTurnByTurnInstructions(segments);
                                                 } catch (e) {
                                                     console.error('Error parsing instructions:', e);
