@@ -62,16 +62,18 @@ if (empty($apiKey)) {
     exit;
 }
 
+$profile = 'cycling-regular';
 
 // driving car
-$url = "https://api.openrouteservice.org/v2/directions/driving-car?api_key={$apiKey}";
+$url = "https://api.openrouteservice.org/v2/directions/{$profile}?api_key={$apiKey}";
 $requestData = [
     'coordinates' => [
         [(float)$startLng, (float)$startLat],
         [(float)$endLng, (float)$endLat]
     ],
     'instructions' => true,
-    'geometry' => true
+    'geometry' => true,
+    'language' => 'id'
 ];
 
 $ch = curl_init($url);
